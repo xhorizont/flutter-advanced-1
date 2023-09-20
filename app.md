@@ -1,8 +1,8 @@
 main.dart
 
 ```
-import 'package:aladin/homepage.dart';
 import 'package:flutter/material.dart';
+import 'homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -58,13 +58,15 @@ class _PrvaStranState extends State<PrvaStran> {
   }
 }
 
+
 ```
 
 homepage.dart
 
 ```
-import 'package:aladin/drugastran.dart';
 import 'package:flutter/material.dart';
+
+import 'drugastran.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -76,14 +78,15 @@ class HomePage extends StatelessWidget {
         onPressed: () {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (BuildContext context) {
-            return Tutorial();
+            return const Tutorial();
           }));
         },
-        child: Text('Besedilo'),
+        child: const Text('Besedilo'),
       ),
     );
   }
 }
+
 
 ```
 
@@ -109,18 +112,18 @@ class _TutorialState extends State<Tutorial> {
       body: Column(
         children: [
           Image.asset('images/image1.jpg'),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          Divider(
+          const Divider(
             color: Colors.pink,
           ),
           Container(
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             width: 200,
             color: Colors.black,
-            child: Center(
+            child: const Center(
               child: Text(
                 'Besedilo',
                 style: TextStyle(fontSize: 25, color: Colors.white),
@@ -131,11 +134,12 @@ class _TutorialState extends State<Tutorial> {
               onPressed: () {
                 debugPrint('Dvignjni gumb');
               },
-              child: Text('Klikni me'))
+              child: const Text('Klikni me'))
         ],
       ),
     );
   }
 }
+
 
 ```
